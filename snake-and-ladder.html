@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake and Ladder</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat(10, 50px);
+            grid-template-rows: repeat(10, 50px);
+            gap: 1px;
+            margin: 0 auto;
+            width: 510px;
+            height: 510px;
+            background-color: #ddd;
+        }
+
+        .cell {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .player1 {
+            background-color: #ff6347;
+        }
+
+        .player2 {
+            background-color: #4682b4;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .status {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .player-info {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="game-selection.html">Games</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Snake and Ladder</h1>
+
+    <div class="board" id="board"></div>
+
+    <div class="button-container">
+        <button id="rollButton" class="button">Roll Dice</button>
+    </div>
+
+    <div class="status" id="status">Player 1's turn</div>
+
+    <div class="player-info">
+        <h2>Players</h2>
+        <p>Player 1 Position: <span id="player1Position">1</span></p>
+        <p>Player 2 Position: <span id="player2Position">1</span></p>
+    </div>
+
+    <script src="snake-and-ladder.js"></script> <!-- Link to external JavaScript file -->
+</body>
+</html>
