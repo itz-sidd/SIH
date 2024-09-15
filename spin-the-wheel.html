@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spin the Wheel</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS file -->
+    <style>
+        /* Inline CSS for the Spin the Wheel game */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .wheel-container {
+            position: relative;
+            margin: 20px auto;
+            width: 300px;
+            height: 300px;
+        }
+
+        .wheel {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: conic-gradient(#FF6347 0% 25%, #FFD700 25% 50%, #3CB371 50% 75%, #1E90FF 75% 100%);
+            position: relative;
+            transition: transform 4s ease-out;
+        }
+
+        .wheel:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            background-color: #333;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .status {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .players {
+            margin-top: 20px;
+        }
+
+        .player {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .player input {
+            margin-left: 10px;
+            padding: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="game-selection.html">Games</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Spin the Wheel Game</h1>
+    <div class="wheel-container">
+        <div id="wheel" class="wheel"></div>
+    </div>
+    <div class="button-container">
+        <button id="spinButton" class="button">Spin the Wheel</button>
+    </div>
+    <div class="status" id="status"></div>
+
+    <div class="players">
+        <h2>Players</h2>
+        <div id="playersList"></div>
+        <input type="text" id="playerName" placeholder="Enter player name">
+        <button id="addPlayerButton" class="button">Add Player</button>
+    </div>
+
+    <script src="spin-the-wheel.js"></script> <!-- Link to external JavaScript file -->
+</body>
+</html>
