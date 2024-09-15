@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Selection</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #00b4db, #0083b0);
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            margin-top: 30px;
+            font-size: 2.5em;
+        }
+
+        .game-selection-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .game-card {
+            background: #fff;
+            color: #333;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .game-card h2 {
+            margin: 0 0 15px;
+            font-size: 1.8em;
+        }
+
+        .game-card a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .game-card a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+            
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Select a Game</h1>
+
+    <div class="game-selection-container">
+        <div class="game-card">
+            <h2>Spin the Wheel</h2>
+            <a href="spin-the-wheel.html">Play Now</a>
+        </div>
+
+        <div class="game-card">
+            <h2>Snake & Ladder</h2>
+            <a href="snake-and-ladder.html">Play Now</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Your Company Name. All rights reserved.</p>
+    </footer>
+
+
+
+ 
+
+    <!-- Script to extract user input data from URL and display it on the page -->
+    <script>
+        // Function to get URL parameters (name, age, state)
+        function getParameterByName(name) {
+            let url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            let regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        // Extract and display the user's name from the URL parameters
+        document.getElementById('username').textContent = getParameterByName('name');
+    </script>
+</body>
+</html>
