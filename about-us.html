@@ -133,6 +133,142 @@
                 }
             }
         </style>
+       
+            <style>
+                body {
+                    font-family: 'Poppins', sans-serif;
+                    margin: 0;
+                    padding: 0;
+                    background: linear-gradient(to right, #ffafbd, #ffc3a0); /* Soft gradient */
+                    color: white;
+                    text-align: center;
+                }
+        
+                .container {
+                    max-width: 900px;
+                    margin: 0 auto;
+                    padding: 50px 20px;
+                }
+        
+                h1 {
+                    font-size: 3rem;
+                    margin-bottom: 20px;
+                    letter-spacing: 3px;
+                    text-transform: uppercase;
+                }
+        
+                p {
+                    font-size: 1.2rem;
+                    margin-bottom: 40px;
+                    line-height: 1.6;
+                }
+        
+                .feedback-form {
+                    background-color: rgba(255, 255, 255, 0.1);
+                    padding: 30px;
+                    border-radius: 15px;
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+                    max-width: 700px;
+                    margin: 0 auto;
+                }
+        
+                .feedback-form h2 {
+                    color: #fff;
+                    font-size: 2rem;
+                    margin-bottom: 20px;
+                }
+        
+                .feedback-form label {
+                    display: block;
+                    text-align: left;
+                    color: #fff;
+                    font-size: 1.1rem;
+                    margin-bottom: 10px;
+                }
+        
+                .feedback-form input, .feedback-form textarea {
+                    width: 100%;
+                    padding: 10px;
+                    margin-bottom: 20px;
+                    border: none;
+                    border-radius: 8px;
+                    font-size: 1rem;
+                }
+        
+                .feedback-form input[type="submit"] {
+                    background-color: #ff416c;
+                    color: white;
+                    font-size: 1.2rem;
+                    cursor: pointer;
+                    transition: transform 0.2s ease-in, background-color 0.2s ease;
+                    padding: 15px;
+                    border-radius: 8px;
+                    border: none;
+                }
+        
+                .feedback-form input[type="submit"]:hover {
+                    background-color: #ff4b2b;
+                    transform: scale(1.05);
+                }
+        
+                .feedback-form input[type="submit"]:active {
+                    transform: scale(0.95);
+                }
+        
+                footer {
+                    margin-top: 50px;
+                    font-size: 0.9rem;
+                    color: rgba(255, 255, 255, 0.8);
+                }
+        
+                /* Responsive design */
+                @media (max-width: 768px) {
+                    h1 {
+                        font-size: 2.5rem;
+                    }
+        
+                    p {
+                        font-size: 1rem;
+                    }
+        
+                    .feedback-form input[type="submit"] {
+                        font-size: 1rem;
+                        padding: 12px;
+                    }
+                }
+            </style>
+        </head>
+        <body>
+        
+            <div class="container">
+                <h1>About Us</h1>
+                <p>
+                    This is our game website where we will teach you about our constitution through basic games and we will enhance our website through your feedback .
+                </p>
+                
+                <!-- Feedback Form Section -->
+                <div class="feedback-form">
+                    <h2>We'd Love to Hear from You!</h2>
+                    <form action="submit-feedback.php" method="POST">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        
+                        <label for="message">Feedback:</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Enter your feedback" required></textarea>
+        
+                        <input type="submit" value="Submit Feedback">
+                    </form>
+                </div>
+            </div>
+        
+            
+        
+        </body>
+        </html>
+        
    
       
     
@@ -152,8 +288,8 @@
 
     <section class="hero">
         <div class="hero-content">
-            <h1 class="animate-text">Welcome to Our Company</h1>
-            <p class="animate-text">We are dedicated to providing top-notch services and experiences.</p>
+            <h1 class="animate-text">Welcome to Our GameSite</h1>
+            <p class="animate-text">We are dedicated to providing you knowledge about law and order.</p>
         </div>
     </section>
 
