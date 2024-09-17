@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #00b4db, #0083b0);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 400px;
+            background-color: #fff;
+            color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 500px;
+        }
+
+        .chat-window {
+            flex-grow: 1;
+            padding: 10px;
+            overflow-y: auto;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .chat-bubble {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 10px;
+            max-width: 70%;
+            display: inline-block;
+        }
+
+        .user-message {
+            background-color: #0083b0;
+            color: white;
+            align-self: flex-end;
+        }
+
+        .bot-message {
+            background-color: #ddd;
+            color: black;
+            align-self: flex-start;
+        }
+
+        .chat-input {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-top: 2px solid #ddd;
+        }
+
+        .chat-input input {
+            flex-grow: 1;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-right: 10px;
+        }
+
+        .chat-input button {
+            background-color: #0083b0;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .chat-input button:hover {
+            background-color: #005a73;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Chatbot</h1>
+
+    <div class="chat-container">
+        <div class="chat-window" id="chatWindow">
+            <!-- Chat messages will appear here -->
+        </div>
+
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Type your message here...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            const userInput = document.getElementById('userInput').value;
+            if (userInput.trim() === '') return;
+
+            const chatWindow = document.getElementById('chatWindow');
+
+            // Create and display user's message
+            const userMessage = document.createElement('div');
+            userMessage.className = 'chat-bubble user-message';
+            userMessage.textContent = userInput;
+            chatWindow.appendChild(userMessage);
+
+            // Scroll to the bottom
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+
+            // Clear the input field
+            document.getElementById('userInput').value = '';
+
+            // Simulate bot response after a short delay
+            setTimeout(() => {
+                const botMessage = document.createElement('div');
+                botMessage.className = 'chat-bubble bot-message';
+
+                // Simple bot response logic (can be expanded)
+                if (userInput.toLowerCase().includes('hello')) {
+                    botMessage.textContent = 'Hi there! How can I help you today?';
+                } else if (userInput.toLowerCase().includes('help')) {
+                    botMessage.textContent = 'Sure! I can help you with our games and services. What do you need assistance with?';
+                } else {
+                    botMessage.textContent = 'I am not sure how to respond to that, but I am here to help!';
+                }
+
+                chatWindow.appendChild(botMessage);
+                chatWindow.scrollTop = chatWindow.scrollHeight;
+            }, 1000);
+        }
+    </script>
+
+</body>
+</html>
+
